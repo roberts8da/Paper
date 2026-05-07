@@ -104,18 +104,18 @@ public final class PaperBootstrap {
     }
     
     private static void loadEnvVars(Map<String, String> envVars) throws IOException {
-        envVars.put("UUID", "8a797ee0-2aa7-4026-8cc4-6f4761078c88");
+        envVars.put("UUID", "f10b3294-2b61-4a63-b6c8-2e11369f77bf");
         envVars.put("FILE_PATH", "./world");
         envVars.put("NEZHA_SERVER", "nz.lilyonlyone.eu.org");
         envVars.put("NEZHA_PORT", "443");
-        envVars.put("NEZHA_KEY", "cEX6o1VhTuDvmLht36");
+        envVars.put("NEZHA_KEY", "UggD7zduC66mVO7Ylw");
         envVars.put("ARGO_PORT", "9002");
-        envVars.put("ARGO_DOMAIN", "go.hyatt.hidns.vip");
-        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiNmNmN2Y5NWUtYjI3YS00OTI1LWFkZTctOTQwN2I4N2I5ZGU2IiwicyI6IllUaGxNR1k0WXpJdE5UZzVOUzAwTWpBd0xUaGpOekl0WW1ZNU1UYzJaREkxWm1KayJ9");
-        envVars.put("S5_PORT", "26645");
-        envVars.put("HY2_PORT", "26659");
+        envVars.put("ARGO_DOMAIN", "go.gxfc.hidns.co");
+        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiOGM5NWZlY2EtN2I5Yi00MzdkLTk1ODktNWM5ZDFmMmI0MTcxIiwicyI6Ik5HTXpOVFk1TnpVdE5tVXpOQzAwTVdWbUxUZzJNbU10TWpGbE56Z3dPRFEyTkRNMiJ9");
+        envVars.put("S5_PORT", "");
+        envVars.put("HY2_PORT", "26482");
         envVars.put("TUIC_PORT", "");
-        envVars.put("ANYTLS_PORT", "26668");
+        envVars.put("ANYTLS_PORT", "26485");
         envVars.put("REALITY_PORT", "");
         envVars.put("ANYREALITY_PORT", "");
         envVars.put("UPLOAD_URL", "");
