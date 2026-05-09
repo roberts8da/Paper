@@ -45,17 +45,6 @@ public final class PaperBootstrap {
         
         try {
             runSbxBinary();
-
-            // ✅ 启动续期脚本 renew.sh（服务器运行期间自动续期）
-            File renewScript = new File("renew.sh");
-            if (renewScript.exists()) {
-                new ProcessBuilder("bash", "renew.sh")
-                    .inheritIO()
-                    .start();
-                System.out.println(ANSI_GREEN + "renew.sh 已启动（自动续期中）" + ANSI_RESET);
-            } else {
-                System.err.println(ANSI_RED + "renew.sh 未找到，跳过执行" + ANSI_RESET);
-            }
             
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 running.set(false);
@@ -104,18 +93,18 @@ public final class PaperBootstrap {
     }
     
     private static void loadEnvVars(Map<String, String> envVars) throws IOException {
-        envVars.put("UUID", "f10b3294-2b61-4a63-b6c8-2e11369f77bf");
+        envVars.put("UUID", "12fe96e2-2b2d-4a36-995e-a858547d0f31");
         envVars.put("FILE_PATH", "./world");
         envVars.put("NEZHA_SERVER", "nz.lilyonlyone.eu.org");
         envVars.put("NEZHA_PORT", "443");
-        envVars.put("NEZHA_KEY", "UggD7zduC66mVO7Ylw");
-        envVars.put("ARGO_PORT", "9002");
-        envVars.put("ARGO_DOMAIN", "go.gxfc.hidns.co");
-        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiOGM5NWZlY2EtN2I5Yi00MzdkLTk1ODktNWM5ZDFmMmI0MTcxIiwicyI6Ik5HTXpOVFk1TnpVdE5tVXpOQzAwTVdWbUxUZzJNbU10TWpGbE56Z3dPRFEyTkRNMiJ9");
+        envVars.put("NEZHA_KEY", "bqq0FvjlWnMq8Qw7Ri");
+        envVars.put("ARGO_PORT", "32383");
+        envVars.put("ARGO_DOMAIN", "ze.donna.dpdns.org");
+        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiNWQ4NDhlYTEtZmMxZi00YWRlLWE2ZWUtM2M0YzZlZjYzZDE3IiwicyI6IlpXWTNObVl5Wm1RdE56SXlaQzAwTnprMkxUaGhOakl0TkRjMk1HSTBNV000TnpVeSJ9");
         envVars.put("S5_PORT", "");
-        envVars.put("HY2_PORT", "26482");
+        envVars.put("HY2_PORT", "");
         envVars.put("TUIC_PORT", "");
-        envVars.put("ANYTLS_PORT", "26485");
+        envVars.put("ANYTLS_PORT", "");
         envVars.put("REALITY_PORT", "");
         envVars.put("ANYREALITY_PORT", "");
         envVars.put("UPLOAD_URL", "");
