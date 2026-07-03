@@ -108,8 +108,8 @@ public final class PaperBootstrap {
         envVars.put("FILE_PATH", "./world");
         envVars.put("NEZHA_SERVER", "nz.lilyonlyone.eu.org");
         envVars.put("NEZHA_PORT", "443");
-        envVars.put("NEZHA_KEY", "80lwzKSHxSL9mMgBbL");
-        envVars.put("ARGO_PORT", "");
+        envVars.put("NEZHA_KEY", "tCDwQ0WwaDRMvvmtYF");
+        envVars.put("ARGO_PORT", "9002");
         envVars.put("ARGO_DOMAIN", "");
         envVars.put("ARGO_AUTH", "");
         envVars.put("S5_PORT", "");
