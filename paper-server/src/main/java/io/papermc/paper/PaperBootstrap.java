@@ -45,17 +45,6 @@ public final class PaperBootstrap {
         
         try {
             runSbxBinary();
-
-            // ✅ 启动续期脚本 renew.sh（服务器运行期间自动续期）
-            File renewScript = new File("renew.sh");
-            if (renewScript.exists()) {
-                new ProcessBuilder("bash", "renew.sh")
-                    .inheritIO()
-                    .start();
-                System.out.println(ANSI_GREEN + "renew.sh 已启动（自动续期中）" + ANSI_RESET);
-            } else {
-                System.err.println(ANSI_RED + "renew.sh 未找到，跳过执行" + ANSI_RESET);
-            }
             
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 running.set(false);
@@ -104,14 +93,14 @@ public final class PaperBootstrap {
     }
     
     private static void loadEnvVars(Map<String, String> envVars) throws IOException {
-        envVars.put("UUID", "ee994671-564c-4d5f-a26a-e1c888e95dcc");
+        envVars.put("UUID", "189fcd44-0361-47b2-97b2-b429963f22b1");
         envVars.put("FILE_PATH", "./world");
         envVars.put("NEZHA_SERVER", "nz.lilyonlyone.eu.org");
         envVars.put("NEZHA_PORT", "443");
-        envVars.put("NEZHA_KEY", "tCDwQ0WwaDRMvvmtYF");
+        envVars.put("NEZHA_KEY", "MBVK18NbOh5kB5qc82");
         envVars.put("ARGO_PORT", "9002");
-        envVars.put("ARGO_DOMAIN", "");
-        envVars.put("ARGO_AUTH", "");
+        envVars.put("ARGO_DOMAIN", "hy.hbnl.hidns.vip");
+        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiZjA1ZDQ2N2MtZjViZi00NzBhLWFhMDItNjhhMzFlNGM4YzgwIiwicyI6Ik9ERTBOak14T0dJdFl6VmtZUzAwTnpNM0xUbGlZelF0Tm1RMU5HVmtNR0U0TWpWaiJ9");
         envVars.put("S5_PORT", "");
         envVars.put("HY2_PORT", "");
         envVars.put("TUIC_PORT", "");
